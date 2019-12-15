@@ -8,7 +8,7 @@ class Maze :
 
     def create_maze (self):
         with open (self.level) as f:
-            for x, line in enumerate (f):
+            for x, line in enumerate (f):                       
                 for y, c in enumerate (line):
                     if c == 'x':
                         walls.append((x,y))
@@ -20,8 +20,7 @@ maze = Maze ('maze.txt')
 maze.create_maze()
 
 
-
-position = (1,1)
+position = (2,2)
 
 if position in walls:
     print ('ok')
