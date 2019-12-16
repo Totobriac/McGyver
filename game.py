@@ -1,27 +1,17 @@
-walls = []
-paths = []
-
-class Maze :
-
-    def __init__ (self, level):
-        self.level = level
-
-    def create_maze (self):
-        with open (self.level) as f:
-            for x, line in enumerate (f):                       
-                for y, c in enumerate (line):
-                    if c == 'x':
-                        walls.append((x,y))
-                    elif c == '0':
-                        paths.append((x,y))
+from classes import *
 
 maze = Maze ('maze.txt')
 
 maze.create_maze()
 
+mac = Player('mac',[2,2])
 
-position = (2,2)
 
-if position in walls:
-    print ('ok')
-else: print('no')
+keep_playing = True
+print (mac.position)
+while keep_playing:
+    print (mac.position)
+    direction = input("Where are you heading to?")
+    if mac.move(direction) in maze.paths:
+        print ('ok')
+    else: print('No way!')
