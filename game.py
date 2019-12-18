@@ -1,23 +1,27 @@
 from classes import *
+import random
+
 
 maze = Maze ('maze.txt')
-
 maze.create_maze()
+objects = maze.items ()
+print (objects)
 
-mac = Player('mac',[2,2])
 
+position = [maze.hero_position[0][0], maze.hero_position[0][1]]
+mac = Player('mac',position)
 
-print(maze.guard_position)
 
 keep_playing = True
-print (mac.position)
+
 while keep_playing:
     print (mac.position)
     direction = input("Where are you heading to?")
-    if mac.calculate_move(direction) in maze.paths:
+    if direction == "quit":
+        keep_playing = False
+    elif mac.calculate_move(direction) in maze.paths:
         mac.do_move(direction)        
         print('ok')
         if mac.position in maze.guard_position:
-            print('It is a win')
-    else:
-        print('No way!')
+            print('It is a win')   
+    else : print ('No way!!')  
