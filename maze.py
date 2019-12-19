@@ -26,8 +26,8 @@ class Maze :
                     elif c == 'H': 
                         self.paths.append([x,y]) 
                         self.hero_position.append([x,y])
-                        # position = [self.hero_position[0][0], self.hero_position[0][1]]                   
-            return self.walls, self.paths, self.guard_position, self.hero_position
+                        self.position = [self.hero_position[0][0], self.hero_position[0][1]]                   
+            return self.walls, self.paths, self.guard_position, self.hero_position, self.position
 
     def items (self):
 
