@@ -26,8 +26,8 @@ class Maze :
                     elif c == 'H': 
                         self.paths.append([x,y]) 
                         self.hero_position.append([x,y])
-                        self.position = [self.hero_position[0][0], self.hero_position[0][1]]                   
-            return self.walls, self.paths, self.guard_position, self.hero_position, self.position
+                        self.start_position = [self.hero_position[0][0], self.hero_position[0][1]]                   
+            return self.walls, self.paths, self.guard_position, self.hero_position, self.start_position
 
     def items (self):
 
@@ -39,6 +39,10 @@ class Maze :
         return self.items_position
 
     def draw (self, window):
+
+        background = pygame.image.load('floor.png').convert()
+        window.blit(background,(0,0))
+
 
         wall = pygame.image.load('wall.png').convert()
         for i in self.walls:
@@ -63,6 +67,9 @@ class Maze :
         window.blit(needle,(items_draw[0][0],items_draw[0][1]))
         window.blit(ether,(items_draw[1][0],items_draw[1][1]))
         window.blit(tube,(items_draw[2][0],items_draw[2][1]))
+
+  
+
 
 
 

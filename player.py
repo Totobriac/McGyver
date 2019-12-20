@@ -5,11 +5,12 @@ from pygame.locals import *
 
 class Player :
 
-    def __init__ (self, name, position):
+    def __init__ (self, name, start_position, window):
 
         self.name = name
-        self.position = position
+        self.position = start_position
         self.collected_items = []
+        self.window = window
         
     def calculate_move(self, direction):
         
@@ -34,3 +35,10 @@ class Player :
 
         if len(collected_items) == 3: print ('Good job!!!')
         else: print ('Dead!!!')
+
+    def draw_player (self, window):
+        mac_sprite = pygame.image.load('mac_gyver.png').convert()
+        x = self.position [0] * 30
+        y = self.position [1] * 30
+        window.blit(mac_sprite,(x,y))
+
