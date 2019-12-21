@@ -14,18 +14,22 @@ maze.items()
 maze.draw(window)
 
 
+
 mac = Player('mac',maze.start_position, window)
-mac.draw_player(window)
+
 
 keep_playing = True
 pygame.display.flip()
+collected = mac.collected_items
+mac.draw_player(window)
+maze.item_draw(window, collected)
 
 while keep_playing:
     for event in pygame.event.get():
-        
-        if event.type == pygame.QUIT:  
+
+        if event.type == pygame.QUIT:
             raise SystemExit
-        
+
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 direction = "up"
@@ -35,18 +39,18 @@ while keep_playing:
                 direction = "down"
             elif event.key == pygame.K_RIGHT:
                 direction = "right"
-                 
+
             if mac.calculate_move(direction) in maze.paths:
                 mac.do_move(direction)
-                print(direction) 
-                print (mac.position)
-                if mac.position in maze.items_position:                    
-                    mac.collect(mac.position)                        
+                print (collected)
+                if mac.position in maze.items_position:
+                    mac.collect(mac.position)
+
                 elif mac.position in maze.guard_position:
-                    mac.win(mac.collected_items) 
+                    mac.win(mac.collected_items)
 
     maze.draw(window)
+    maze.item_draw(window, collected)
     mac.draw_player(window)
 
     pygame.display.flip()
-   

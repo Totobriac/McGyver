@@ -11,10 +11,10 @@ class Player :
         self.position = start_position
         self.collected_items = []
         self.window = window
-        
+
     def calculate_move(self, direction):
-        
-        posible_position = self.position [:] 
+
+        posible_position = self.position [:]
         if direction == "right":    posible_position[0] += 1
         elif direction == "left":   posible_position[0] -= 1
         elif direction == "up":     posible_position[1] -= 1
@@ -22,14 +22,14 @@ class Player :
         return posible_position
 
     def do_move(self, direction):
-        
+
         self.position = self.calculate_move(direction)
-        
+
     def collect (self, position):
-        
-        if position not in self.collected_items:            
-            self.collected_items.append(position)            
-            return self.collected_items 
+
+        if position not in self.collected_items:
+            self.collected_items.append(position)                        
+            return self.collected_items
 
     def win (self, collected_items):
 
@@ -41,4 +41,3 @@ class Player :
         x = self.position [0] * 30
         y = self.position [1] * 30
         window.blit(mac_sprite,(x,y))
-
