@@ -57,14 +57,12 @@ class Maze :
 
     def item_draw (self, window, collected):
 
-        needle_sprite = pygame.image.load('needle.png').convert()
-        ether_sprite = pygame.image.load('ether.png').convert()
-        tube_sprite = pygame.image.load('tube.png').convert()
-        for i in self.items_position:
-            if i not in collected:
-                x = i[0] * 30
-                y = i[1] * 30
+        sprite = [pygame.image.load('needle.png').convert(),
+                  pygame.image.load('ether.png').convert(),
+                  pygame.image.load('tube.png').convert()]
 
-                window.blit(needle_sprite,(x,y))
-                window.blit(ether_sprite,(x,y))
-                window.blit(tube_sprite,(x,y))
+        for i in range (len(self.items_position)):
+            x = self.items_position[i][0] * 30
+            y = self.items_position[i][1] * 30
+            if self.items_position[i] not in collected:
+                 window.blit(sprite[i],(x,y))

@@ -42,7 +42,7 @@ while keep_playing:
 
             if mac.calculate_move(direction) in maze.paths:
                 mac.do_move(direction)
-                print (collected)
+
                 if mac.position in maze.items_position:
                     mac.collect(mac.position)
 
