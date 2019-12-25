@@ -37,7 +37,7 @@ class Player :
         else: print ('Dead!!!')
 
     def draw_player (self, window):
-        mac_sprite = pygame.image.load('mac_gyver.png').convert()
+        mac_sprite = pygame.image.load('arts/mac_gyver.png').convert()
         x = self.position [0] * 30
         y = self.position [1] * 30
         window.blit(mac_sprite,(x,y))

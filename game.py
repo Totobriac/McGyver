@@ -8,7 +8,7 @@ pygame.init()
 window = pygame.display.set_mode((450, 450))
 
 
-maze = Maze('maze.txt', window)
+maze = Maze('arts/maze.txt', window)
 maze.create_maze()
 maze.items()
 maze.draw(window)

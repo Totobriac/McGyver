@@ -40,26 +40,26 @@ class Maze :
 
     def draw (self, window):
 
-        background = pygame.image.load('floor.png').convert()
+        background = pygame.image.load('arts/floor.png').convert()
         window.blit(background,(0,0))
 
 
-        wall = pygame.image.load('wall.png').convert()
+        wall = pygame.image.load('arts/wall.png').convert()
         for i in self.walls:
             x = i[0] * 30
             y = i[1] * 30
             window.blit(wall,(x,y))
 
-        guard = pygame.image.load('guard.png').convert()
+        guard = pygame.image.load('arts/guard.png').convert()
         x = self.guard_position [0][0] * 30
         y = self.guard_position [0][1] * 30
         window.blit(guard,(x,y))
 
     def item_draw (self, window, collected):
 
-        sprite = [pygame.image.load('needle.png').convert(),
-                  pygame.image.load('ether.png').convert(),
-                  pygame.image.load('tube.png').convert()]
+        sprite = [pygame.image.load('arts/needle.png').convert(),
+                  pygame.image.load('arts/ether.png').convert(),
+                  pygame.image.load('arts/tube.png').convert()]
 
         for i in range (len(self.items_position)):
             x = self.items_position[i][0] * 30
