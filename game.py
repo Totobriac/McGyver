@@ -7,24 +7,22 @@ pygame.init()
 
 window = pygame.display.set_mode((450, 450))
 
-
 maze = Maze('arts/maze.txt', window)
 maze.create_maze()
-maze.items()
+maze.items_placement()
 maze.draw(window)
-
-
 
 mac = Player('mac',maze.start_position, window)
 
 
-keep_playing = True
 pygame.display.flip()
 collected = mac.collected_items
 mac.draw_player(window)
-maze.item_draw(window, collected)
+maze.items_draw(window, collected)
+keep_playing = True
 
 while keep_playing:
+
     for event in pygame.event.get():
 
         if event.type == pygame.QUIT:
@@ -50,7 +48,8 @@ while keep_playing:
                     mac.win(mac.collected_items)
 
     maze.draw(window)
-    maze.item_draw(window, collected)
+    maze.items_draw(window, collected)
+    maze.text_items(collected)
     mac.draw_player(window)
 
     pygame.display.flip()

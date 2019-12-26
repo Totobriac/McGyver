@@ -28,7 +28,7 @@ class Player :
     def collect (self, position):
 
         if position not in self.collected_items:
-            self.collected_items.append(position)                        
+            self.collected_items.append(position)
             return self.collected_items
 
     def win (self, collected_items):
@@ -41,3 +41,5 @@ class Player :
         x = self.position [0] * 30
         y = self.position [1] * 30
         window.blit(mac_sprite,(x,y))
+
+    
