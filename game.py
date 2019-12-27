@@ -1,5 +1,4 @@
 import pygame
-from pygame.locals import *
 from maze import Maze
 from player import Player
 
@@ -12,8 +11,7 @@ maze.create_maze()
 maze.items_placement()
 maze.draw(window)
 
-mac = Player('mac',maze.start_position, window)
-
+mac = Player('mac', maze.start_position, window)
 
 pygame.display.flip()
 collected = mac.collected_items
