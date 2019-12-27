@@ -3,9 +3,16 @@ import random
 
 
 class Maze:
-
+    """
+    This class creates the maze.
+    """
     def __init__(self, level, window):
+        """
+        The maze constructor.
 
+        Parameters:
+           level (.txt): A .txt file. Creates the whole maze from it.
+        """
         self.level = level
         self.walls = []
         self.paths = []
@@ -14,13 +21,16 @@ class Maze:
         self.window = window
 
     def create_maze(self):
+        """
+        Reads the level.txt and create the maze skeleton.
 
+        Returns:
+            lists with paths, walls, hero and guard starting position.
+        """
         with open(self.level) as f:
             for y, line in enumerate(f):
                 for x, c in enumerate(line):
                     if c == 'x':
-                        self.walls.append([x, y])
-                    if c == 'b':
                         self.walls.append([x, y])
                     elif c == '0':
                         self.paths.append([x, y])
@@ -36,6 +46,12 @@ class Maze:
                     self.start_position)
 
     def items_placement(self):
+        """
+        Function that checks for random posible positions for the objects.
+
+        Returns:
+            a list with the position of the objects
+        """
 
         self.items_position = []
         while len(self.items_position) < 3:
@@ -47,6 +63,9 @@ class Maze:
         return self.items_position
 
     def draw(self, window):
+        """
+        Function that draws the background, walls and guard in the game window.
+        """
 
         background = pygame.image.load('arts/floor.png').convert()
         window.blit(background, (0, 0))
@@ -63,6 +82,12 @@ class Maze:
         window.blit(guard, (x, y))
 
     def items_draw(self, window, collected):
+        """
+        Function that draws the objects in the game window.
+
+        Parameters:
+            collected : a list of the objects already collected by the player
+        """
 
         sprite = [pygame.image.load('arts/needle.png').convert_alpha(),
                   pygame.image.load('arts/ether.png').convert(),
@@ -75,7 +100,12 @@ class Maze:
                 window.blit(sprite[i], (x, y))
 
     def text_items(self, collected):
+        """
+        Function that draws how many objects are colleced in the game window.
 
+        Parameters:
+            collected : a list of the objects already collected by the player
+        """
         inventory_count = len(collected)
         font = pygame.font.SysFont('Comic Sans MS', 28)
         items_count = "Items collected : {}".format(inventory_count)
