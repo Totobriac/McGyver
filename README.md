@@ -1,4 +1,4 @@
-Projet number 3: “Aider MacGyver à s’échapper”
+##Projet number 3: “Aider MacGyver à s’échapper”
 
 
 Program written in Python3 with the use of Pygame.
