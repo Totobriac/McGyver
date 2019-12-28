@@ -7,12 +7,12 @@ Program written in Python3 with the use of Pygame.
 1- Install:
 -----------
 
--create an empty file
--create a virtual environment and activate it
--download and unzip the project into the file 
--run: pip install -r requirements.txt 
--run: python game.py
--enjoy :)
+*-create an empty file
+*-create a virtual environment and activate it
+*-download and unzip the project into the file 
+*-run: pip install -r requirements.txt 
+*-run: python game.py
+*-enjoy :)
 
 2- Game purpose:
 ---------------
