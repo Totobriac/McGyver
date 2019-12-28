@@ -7,12 +7,12 @@ Program written in Python3 with the use of Pygame.
 1- Install:
 -----------
 
-* -create an empty file
-* -create a virtual environment and activate it
-* -download and unzip the project into the file 
-* -run: pip install -r requirements.txt 
-* -run: python game.py
-* -enjoy :)
+* create an empty file
+* create a virtual environment and activate it
+* download and unzip the project into the file 
+* run: pip install -r requirements.txt 
+* run: python game.py
+* enjoy :)
 
 2- Game purpose:
 ---------------
@@ -30,3 +30,7 @@ Use the arrows keys to control MacGyver.
 To build your own level just edit the maze.txt you will find in the /arts folder.
 '0' are paths 'x' are walls.
 
+5- Project requirements: 
+------------------------
+
+[OpenClassrooms](https://openclassrooms.com/fr/projects/156/assignment)
