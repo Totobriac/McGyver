@@ -89,7 +89,7 @@ class Maze:
             collected : a list of the objects already collected by the player
         """
 
-        sprite = [pygame.image.load('arts/needle.png').convert_alpha(),
+        sprite = [pygame.image.load('arts/needle.png').convert(),
                   pygame.image.load('arts/ether.png').convert(),
                   pygame.image.load('arts/tube.png').convert_alpha()]
 
