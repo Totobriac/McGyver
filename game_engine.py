@@ -5,7 +5,7 @@ from player import Player
 
 class GameEngine:
 
-    def start_game (self):
+    def start_game(self):
         pygame.init()
         self.window = pygame.display.set_mode((450, 450))  
         self.maze = Maze('arts/maze.txt', self.window)
@@ -25,7 +25,7 @@ class GameEngine:
 
     def game_loop(self):
         for event in pygame.event.get():
-       
+ 
             if event.type == pygame.QUIT:
                 raise SystemExit
 
