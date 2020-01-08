@@ -5,7 +5,7 @@ from player import Player
 
 class GameEngine:
 
-    def start_game(self):
+    def __init__(self):
         pygame.init()
         self.window = pygame.display.set_mode((450, 450))  
         self.maze = Maze('arts/maze.txt', self.window)

@@ -5,7 +5,7 @@ from game_engine import GameEngine
 initialize maze
 """
 new_game = GameEngine()
-new_game.start_game()
+
 
 keep_playing = True
 
